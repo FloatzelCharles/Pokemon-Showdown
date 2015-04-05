@@ -1311,6 +1311,7 @@ var commands = exports.commands = {
 		if (!room.auth) return this.sendReply("/roomauth - This room isn't designed for per-room moderation and therefore has no auth list.");
 		var buffer = [];
 		var owners = [];
+		var leaders = [];
 		var mods = [];
 		var drivers = [];
 		var voices = [];
@@ -1320,6 +1321,9 @@ var commands = exports.commands = {
 		for (var u in room.auth) {
 			if (room.auth[u] === '#') {
 				room.owners = room.owners + u + ',';
+			}
+			if (room.auth[u] === '&') {
+				room.leaders = room.leaders + u + ',';
 			}
 			if (room.auth[u] === '@') {
 				room.mods = room.mods + u + ',';
@@ -1335,6 +1339,7 @@ var commands = exports.commands = {
 		if (room.founder) founder = '**Founder:** ' + room.founder + '\n\n';
 
 		room.owners = room.owners.split(',');
+		room.leaders = room.leaders.split(',');
 		room.mods = room.mods.split(',');
 		room.drivers = room.drivers.split(',');
 		room.voices = room.voices.split(',');
@@ -1343,6 +1348,9 @@ var commands = exports.commands = {
 			if (room.owners[u] !== '') owners.push(room.owners[u]);
 		}
 
+		for (var u in room.leaders) {
+			if (room.leaders[u] !== '') leaders.push(room.leaders[u]);
+		}
 		for (var u in room.mods) {
 			if (room.mods[u] !== '') mods.push(room.mods[u]);
 		}
@@ -1355,6 +1363,9 @@ var commands = exports.commands = {
 		if (owners.length > 0) {
 			owners = '**Owners:** ' + owners.join(', ') + '\n\n';
 		}
+		if (leaders.length > 0) {
+			leaders = '**Leaders:** ' + leaders.join(', ') + '\n\n';
+		}
 		if (mods.length > 0) {
 			mods = '**Moderators:** ' + mods.join(', ') + '\n\n';
 		}
@@ -1366,11 +1377,12 @@ var commands = exports.commands = {
 		}
 
 		if (room.autorank === '#') owners = owners + 'Autorank is set to #.';
+		if (room.autorank === '&') leaders = leaders + 'Autorank is set to &.';
 		if (room.autorank === '@') mods = mods + 'Autorank is set to @.';
 		if (room.autorank === '%') drivers = drivers + 'Autorank is set to %.';
 		if (room.autorank === '+') voices = voices + 'Autorank is set to +.';
 
-		connection.popup(founder + owners + mods + drivers + voices);
+		connection.popup(founder + owners + leaders + mods + drivers + voices);
 	},
 
 	staff: 'stafflist',
