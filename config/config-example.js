@@ -245,7 +245,6 @@ exports.grouplist = [
 		rangeban: true,
 		potd: true,
 		disableladder: true,
-		globalonly: true,
 		tournamentsmanagement: true
 	},
 	{
@@ -254,6 +253,7 @@ exports.grouplist = [
 		name: "Room Owner",
 		inherit: '@',
 		jurisdiction: 'u',
+		roomleader: true,
 		roommod: true,
 		roomdriver: true,
 		declare: true,
