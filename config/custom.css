@@ -156,19 +156,20 @@ button.astext:hover {
     border-left: 0px solid #000000;
 }
 
-a.button.notifying.closable, .tabbar a.button.notifying {
-    background: url("http://i.imgur.com/tehpryL.png");
-    border: 1px solid #575757;
+.tabbar a.button.notifying {
+    border: 1px solid #4DBCEC;
+    border-bottom: none;
+    background: rgba(166, 230, 249, 0.9);
+    color: #212121;
+    text-shadow: 1px 1px 1px #7896B8;
 }
-
-a.button.notifying.closable:hover, .tabbar a.button.notifying:hover {
-    background: url("http://i.imgur.com/MkX5drf.png");
-    border: 1px solid #575757;
-}
-
-a.button.notifying.closable:active, .tabbar a.button.notifying:active {
-    background: url("http://i.imgur.com/MkX5drf.png?1");
-    border: 1px solid #575757;
+    
+.tabbar a.button.notifying:hover {
+    border: 1px solid #4DBCEC;
+    border-bottom: none;
+    background: rgba(141, 226, 252, 0.9);
+    color: #212121;
+    text-shadow: 1px 1px 1px #7896B8;
 }
 
 .tabbar a.button.cur,
