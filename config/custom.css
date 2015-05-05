@@ -267,6 +267,8 @@ body {
 
   span.message-pm {
       color: #00A0A0;
+      padding: 0px 25px 0px 0px;
+      background: url("http://www.blastyak.net/img/mail.png") top right no-repeat;
   }
 
   div.chat small {
