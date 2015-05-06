@@ -27,6 +27,35 @@ body {
   .battle-log {
       background: url("http://i.imgur.com/OALLyrg.png") repeat;
   }
+  
+  /* Statbar css */
+  
+  .statbar .hpbar {
+      background: none repeat scroll 0% 0% #000;
+      border: 1px solid #000;
+  }
+  
+  .statbar .hpbar .hptextborder {
+      border-top: 1px solid #000;
+      border-bottom: 1px solid #000;
+  }
+  
+  .statbar .hpbar .hptext {
+      background: #000;
+  }
+  
+  .statbar .hpbar .prevhp {
+      background: #000;
+  }
+  
+  .statbar strong {
+      display: block;
+      text-align: center;
+      color: #FFF;
+      text-shadow: 1px 1px 0px #000, 1px -1px 0px #000, -1px 1px 0px #000, -1px -1px 0px #000;
+  }
+  
+  /* Statbar css ~end */
 
   .pm-log {
       background: url("http://i.imgur.com/jxOe6XC.png") repeat;
