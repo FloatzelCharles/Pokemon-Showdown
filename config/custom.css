@@ -1061,6 +1061,11 @@ body {
       color: #367A78;
       text-decoration: underline;
   }
+  
+  .alphaninja-txt {
+    font-family: helvetica, arial, sans-serif;
+    text-shadow: 0px 0px 2px #AF9CB2;
+  }
 
 
   /***************************
